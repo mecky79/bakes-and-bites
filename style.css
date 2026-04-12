@@ -189,7 +189,7 @@ section {
 
 .menu-row{
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 24px;
     margin-bottom: 40px;
     flex-direction: row;
@@ -218,6 +218,7 @@ section {
 }
 .menu-row.reverse{
     flex-direction: row-reverse;
+    align-items: center;
 }
 
 
