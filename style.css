@@ -196,8 +196,8 @@ section {
 }
 
 .menu-img-wrapper{
-    width: 350px;
-    height: 350px;
+    width: 180px;
+    height: 180px;
     border-radius: 150px;
     border:12px var(--gold);
     flex-shrink:0;
