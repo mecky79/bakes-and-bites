@@ -364,6 +364,11 @@ ul li:hover { color: var(--gold-light); }
   box-shadow: 0 6px 18px rgba(232, 168, 56, 0.35);
 }
 
+i {
+  color: #E1306C; /* Instagram color */
+  margin-right: 5px;
+}
+
 /* =============================================
    FOOTER
    ============================================= */
