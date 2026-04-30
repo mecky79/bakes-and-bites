@@ -690,7 +690,7 @@ textarea:focus {
 
 
 /* =============================================
-   LIVE CALCULATOR — Total Price Display
+   CART + LIVE CALCULATOR
    ============================================= */
 .total-section {
   background: rgba(30, 12, 3, 0.75);
@@ -699,7 +699,7 @@ textarea:focus {
   padding: 28px;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 16px;
   backdrop-filter: blur(6px);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
   animation: fadeUp 1s ease both;
@@ -718,36 +718,113 @@ textarea:focus {
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
 }
 
-.total-display-wrapper {
+/* Cart list container */
+#cart-list {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
+  min-height: 48px;
+}
+
+.cart-empty {
+  color: rgba(253, 240, 220, 0.4);
+  font-size: 0.9rem;
+  text-align: center;
+  font-style: italic;
+  padding: 10px 0;
+}
+
+/* Each item row in the cart */
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 248, 235, 0.05);
+  border: 1px solid rgba(232, 168, 56, 0.15);
+  border-radius: 10px;
+  padding: 10px 16px;
+  gap: 12px;
+  animation: fadeUp 0.3s ease both;
+}
+
+.cart-item-name {
+  color: var(--text-light);
+  font-size: 0.92rem;
+  flex: 1;
+}
+
+.cart-item-qty {
+  color: var(--gold-light);
+  font-size: 0.82rem;
+  background: rgba(232, 168, 56, 0.12);
+  padding: 3px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.cart-item-price {
+  color: var(--gold);
+  font-weight: 700;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.cart-item-custom {
+  color: var(--gold-light);
+  font-size: 0.82rem;
+  font-style: italic;
+}
+
+/* Divider line */
+.cart-divider {
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent,
+    rgba(232, 168, 56, 0.5),
+    transparent);
+  margin: 4px 0;
+}
+
+/* Total row */
+.cart-total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.cart-total-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: var(--gold-light);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 #display {
-  width: 100%;
-  padding: 18px 20px;
-  border-radius: 12px;
+  padding: 12px 20px;
+  border-radius: 10px;
   border: 2px solid var(--gold);
   background: rgba(0, 0, 0, 0.35);
   color: var(--gold);
   font-family: 'Playfair Display', serif;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-align: center;
+  width: auto;
+  min-width: 180px;
   cursor: default;
-}
-
-#display:disabled {
   opacity: 1;
 }
+
+#display:disabled { opacity: 1; }
 
 .total-note {
   font-size: 0.82rem;
   color: var(--gold-light);
   text-align: center;
   letter-spacing: 0.06em;
-  opacity: 0.75;
+  opacity: 0.7;
   min-height: 18px;
 }
