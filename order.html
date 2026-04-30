@@ -63,12 +63,13 @@
     </fieldset>
 
     <!-- MENU SELECTION -->
-    <div class="menu-section">
+    <div id="menu" class="menu-section">
       <h2>🍽️ Menu Selection</h2>
 
       <div class="menu-group">
         <span class="category-label">🍟 Fast Foods</span>
-        <div class="qty-row">
+        <div  class="qty-row">
+
           <select id="fast-food" name="fast-food">
             <option value="">-- Select item --</option>
             <option value="classic-burger">Classic Burger &mdash; KSh 250</option>
@@ -158,6 +159,14 @@
         </div>
       </div>
     </div>
+    <!--LIVE CALCULATOR-->
+<div class="total-section">
+  <span class="total-label">🧾 Order Total</span>
+  <div class="total-display-wrapper">
+    <input type="text" id="display" disabled placeholder="KSh 0">
+    <p class="total-note" id="total-note"></p>
+  </div>
+</div>
 
     <!-- SPECIAL INSTRUCTIONS -->
     <fieldset>
@@ -166,6 +175,7 @@
       <textarea id="notes" name="notes" placeholder="e.g. No onions, extra sauce, nut allergy..."></textarea>
     </fieldset>
 
+    
     <!-- SUBMIT -->
     <button type="submit" class="submit-btn">🛒 Submit</button>
 
@@ -173,5 +183,6 @@
 
   <footer>Bakes and Bites &copy; 2026 &mdash; All rights reserved</footer>
 
+  <script src="script.js"></script>
 </body>
 </html>

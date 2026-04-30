@@ -568,7 +568,13 @@ select:focus {
 select option {
   background: var(--brown-dark);
   color: var(--text-light);
+
 }
+
+select option::hover{
+  
+}
+
 
 .qty-row {
   display: flex;
@@ -680,4 +686,68 @@ textarea:focus {
   .qty-input { width: 100% !important; }
 
   fieldset, .menu-section { padding: 22px 18px; }
+}
+
+
+/* =============================================
+   LIVE CALCULATOR — Total Price Display
+   ============================================= */
+.total-section {
+  background: rgba(30, 12, 3, 0.75);
+  border: 2px solid var(--gold);
+  border-radius: 16px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  animation: fadeUp 1s ease both;
+}
+
+.total-label {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--brown-dark);
+  background: linear-gradient(90deg, var(--gold), var(--gold-light));
+  padding: 6px 20px;
+  border-radius: 20px;
+  letter-spacing: 0.08em;
+  width: fit-content;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.total-display-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#display {
+  width: 100%;
+  padding: 18px 20px;
+  border-radius: 12px;
+  border: 2px solid var(--gold);
+  background: rgba(0, 0, 0, 0.35);
+  color: var(--gold);
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-align: center;
+  cursor: default;
+}
+
+#display:disabled {
+  opacity: 1;
+}
+
+.total-note {
+  font-size: 0.82rem;
+  color: var(--gold-light);
+  text-align: center;
+  letter-spacing: 0.06em;
+  opacity: 0.75;
+  min-height: 18px;
 }
