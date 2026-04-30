@@ -1,8 +1,7 @@
-// script.js — Bakes and Bites Live Calculator
+// script.js — Bakes and Bites Live Calculator + Cart
 
-// 1. PRICE MAP — every menu value linked to its price in KSh
+// 1. PRICE MAP
 const priceMap = {
-  // Fast Foods
   "classic-burger":  250,
   "cheese-burger":   300,
   "chicken-burger":  320,
@@ -11,37 +10,27 @@ const priceMap = {
   "fries-large":     250,
   "wings":           400,
   "samosa":          70,
-
-  // Quick Bites
   "mini-pizza":      350,
   "sausage-roll":    120,
   "chicken-wrap":    300,
   "chapati-beans":   200,
-
-  // Bakery
   "cupcakes":        100,
   "doughnuts":       80,
   "slice-cake":      150,
   "cookies":         100,
   "muffins":         120,
-
-  // Special Orders
   "birthday-cake":   1500,
-  "custom-cake":     null,   // null = price varies
-
-  // Drinks
+  "custom-cake":     null,
   "soda":            100,
   "juice":           150,
   "milkshake":       250,
   "tea-coffee":      80,
-
-  // Combos
   "combo-1":         450,
   "combo-2":         300,
   "combo-3":         600
 };
 
-// 2. All category IDs in the form
+// 2. CATEGORY IDs
 const categories = [
   "fast-food",
   "quick-bites",
@@ -51,49 +40,92 @@ const categories = [
   "combos"
 ];
 
-// 3. The main calculator function
+// 3. MAIN FUNCTION
 function calculateTotal() {
   let total = 0;
   let hasCustomCake = false;
+  const cartItems = [];   // will hold one object per selected item
 
   categories.forEach(function(category) {
-
-    // Grab the dropdown and qty input for this category
-    const select = document.getElementById(category);
+    const select   = document.getElementById(category);
     const qtyInput = document.querySelector('input[name="' + category + '-qty"]');
-    const qty = parseInt(qtyInput.value) || 1;
+    const qty      = parseInt(qtyInput.value) || 1;
     const selectedValue = select.value;
 
-    // Only add to total if something is selected
     if (selectedValue !== "") {
-      const price = priceMap[selectedValue];
+      // Get the readable name from the option text, strip the price part
+      const optionText = select.options[select.selectedIndex].text;
+      const itemName   = optionText.split("—")[0].trim();
+      const price      = priceMap[selectedValue];
 
       if (price === null) {
-        // Custom cake — can't calculate
         hasCustomCake = true;
-      } else if (price !== undefined) {
-        total += price * qty;
+        cartItems.push({
+          name:   itemName,
+          qty:    qty,
+          price:  null    // custom — no fixed price
+        });
+      } else {
+        const subtotal = price * qty;
+        total += subtotal;
+        cartItems.push({
+          name:     itemName,
+          qty:      qty,
+          price:    price,
+          subtotal: subtotal
+        });
       }
     }
   });
 
-  // 4. Update what the user sees
+  // 4. RENDER THE CART
+  renderCart(cartItems);
+
+  // 5. UPDATE TOTAL DISPLAY
   const display = document.getElementById("display");
   const note    = document.getElementById("total-note");
 
-  if (total === 0 && !hasCustomCake) {
-    display.value = "KSh 0";
+  if (cartItems.length === 0) {
+    display.value    = "KSh 0";
     note.textContent = "Select items above to see your total";
   } else if (hasCustomCake) {
-    display.value = "KSh " + total.toLocaleString() + "+";
+    display.value    = "KSh " + total.toLocaleString() + "+";
     note.textContent = "Custom cake price will be confirmed by our team";
   } else {
-    display.value = "KSh " + total.toLocaleString();
+    display.value    = "KSh " + total.toLocaleString();
     note.textContent = "Delivery fee not included";
   }
 }
 
-// 5. Listen for changes on every dropdown and qty input
+// 6. CART RENDERER — builds the HTML for each cart row
+function renderCart(cartItems) {
+  const cartList = document.getElementById("cart-list");
+
+  // If nothing selected, show the empty message
+  if (cartItems.length === 0) {
+    cartList.innerHTML = '<p class="cart-empty">No items selected yet. Start picking above!</p>';
+    return;
+  }
+
+  // Otherwise build a row for each item
+  let html = "";
+
+  cartItems.forEach(function(item) {
+    const priceDisplay = item.price === null
+      ? '<span class="cart-item-custom">Price on request</span>'
+      : '<span class="cart-item-price">KSh ' + item.subtotal.toLocaleString() + '</span>';
+
+    html += '<div class="cart-item">'
+          +   '<span class="cart-item-name">'  + item.name + '</span>'
+          +   '<span class="cart-item-qty">x'  + item.qty  + '</span>'
+          +   priceDisplay
+          + '</div>';
+  });
+
+  cartList.innerHTML = html;
+}
+
+// 7. ATTACH EVENT LISTENERS
 categories.forEach(function(category) {
   document.getElementById(category)
     .addEventListener("change", calculateTotal);
@@ -102,5 +134,5 @@ categories.forEach(function(category) {
     .addEventListener("input", calculateTotal);
 });
 
-// 6. Run once on page load to set the starting state
+// 8. RUN ONCE ON LOAD
 calculateTotal();

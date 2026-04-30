@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Place Your Order - Bakes and Bites</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="body.css">
 </head>
 <body>
 
@@ -161,11 +161,23 @@
     </div>
     <!--LIVE CALCULATOR-->
 <div class="total-section">
-  <span class="total-label">🧾 Order Total</span>
-  <div class="total-display-wrapper">
-    <input type="text" id="display" disabled placeholder="KSh 0">
-    <p class="total-note" id="total-note"></p>
+  <span class="total-label">🛒 Your Cart</span>
+
+  <!-- Cart item list -->
+  <div id="cart-list">
+    <p class="cart-empty">No items selected yet. Start picking above!</p>
   </div>
+
+  <!-- Divider -->
+  <div class="cart-divider"></div>
+
+  <!-- Total row -->
+  <div class="cart-total-row">
+    <span class="cart-total-text">Order Total</span>
+    <input type="text" id="display" disabled value="KSh 0">
+  </div>
+
+  <p class="total-note" id="total-note">Select items above to see your total</p>
 </div>
 
     <!-- SPECIAL INSTRUCTIONS -->
