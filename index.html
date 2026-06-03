@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bakes and Bites</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="body.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
@@ -28,6 +28,26 @@
   prepare carries a single promise: that your appetite deserves 
   nothing less than the very best.
 </p>
+ <div class="slider">
+  <img src="Chickenwings.jpg" class="slide slide-active">
+  <img src="Frenchfries.jpg" class="slide">
+  <img src="Pizza.jpg" class="slide">
+  <img src="Sausageroll2.jpg" class="slide">
+  <img src="Cupcakes.jpg" class="slide">
+  <img src="Bcake.jpg" class="slide">
+  <img src="Slice-cake1.jpg" class="slide">
+  <img src="Slice-cake2.jpg" class="slide">
+  <img src="Cookies.jpg" class="slide">
+  <img src="Freshjuice.jpg" class="slide">
+  <img src="Milkshake.jpg" class="slide">
+  <img src="Chickenfries.jpg" class="slide">
+  <img src="Friesandsoda.jpg" class="slide">
+  <img src="Ugalifish.jpg"  class="slide">
+  <img src="Ricebeef.jpg" class="slide">
+  <img src="Ricebeans.jpg"  class="slide">
+  <img src="Chapatibeans.jpg" class="slide">
+  <img src="Beefstew.jpg" class="slide">
+ </div>
   </section>
 
   <!-- PAGE 2: About + Menu -->
@@ -142,29 +162,51 @@
 
 </div>
 
-    <h2 class="offer-heading">🎉 Offer!!!</h2>
-    <p>
-      <strong>Order our <span>combo deals</span> now and get free
-      delivery right to your doorstep!</strong>
-    </p>
+    
+
 <div id="order-now">
   <a href="order.html" target="_blank">place Your Order</a>
 </div>  
+
+<fieldset >
+    <legend>comment</legend>
+    <label for="notes">Drop your comment</label>
+    <textarea id="notes" name="notes" placeholder="rate your expirience with us"></textarea>
+   <button type="submit" class="submit-btn" id="comment-btn">Submit comment</button>
+  </fieldset>
+    
 </section>
 
   <!-- PAGE 3: Contact -->
   <section id="contact">
+    <p>We also offer outside catering services.</p>
+    <p>For more info,</p>
+
     <h1>CONTACT US</h1>
 
-    <p>Phone:</p>
-    <a href="tel:+254110537670">📞 Reach Us</a>
+    <div class="contact-box">
+        <a href="https://wa.me/254110537670" target="_blank">
+            <i class="fa-brands fa-square-whatsapp"></i>
+        </a>
+        <span>WhatsApp</span>
+    </div>
 
-    <p>Instagram:</p>
-<a href="https://www.instagram.com/mecky_mehra" target="_blank">
-  <i class="fa-brands fa-instagram"></i> Bakes and Bites
-</a>
+    <div class="contact-box">
+        <a href="tel:+254110537670">
+            <i class="fa-solid fa-phone-volume"></i>
+        </a>
+        <span>+254 110 537 670</span>
+    </div>
+
+    <div class="contact-box">
+        <a href="https://www.instagram.com/mecky_mehra" target="_blank">
+            <i class="fa-brands fa-square-instagram"></i>
+        </a>
+        <span>@mecky_mehra</span>
+    </div>
+</section>
     <footer>Bakes and Bites &copy; 2026 &mdash; All rights reserved</footer>
   </section>
-
+    <script src="slider.js"></script>
 </body>
 </html>

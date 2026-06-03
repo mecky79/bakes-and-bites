@@ -136,3 +136,5 @@ categories.forEach(function(category) {
 
 // 8. RUN ONCE ON LOAD
 calculateTotal();
+
+// 9.SLIDER
