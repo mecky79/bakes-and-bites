@@ -385,19 +385,16 @@ ul li:hover { color: var(--gold-light); }
 
 
 .contact-box:hover {
-  background: var(--gold);
-  color: var(--brown-dark);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(232, 168, 56, 0.35);
+  
   cursor: pointer;
 }
 
-.contact-box{
+.contact-box a{
     width: 280px;
     height: 55px;
     border: 2px solid #d88b43;
     border-radius: 8px;
-
+    text-decoration: none;
     display: flex;
     align-items: center;
 
