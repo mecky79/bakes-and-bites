@@ -694,7 +694,7 @@ textarea:focus {
 }
 .submit-btn {
   display: block;
-  width: 100%;
+  width: 260px;
   padding: 18px;
   background: linear-gradient(90deg, var(--brown-mid), var(--brown-light), var(--brown-mid));
   color: var(--cream);
