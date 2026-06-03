@@ -392,7 +392,7 @@ ul li:hover { color: var(--gold-light); }
   cursor: pointer;
 }
 
-.contact-box{
+.contact-box a{
     width: 280px;
     height: 55px;
     border: 2px solid #d88b43;
