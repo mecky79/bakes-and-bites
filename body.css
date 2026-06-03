@@ -1,4 +1,4 @@
-/* =============================================
+ /* =============================================
    BAKES AND BITES — style.css
    Shared styles for index.html + order.html
    ============================================= */
@@ -384,20 +384,20 @@ ul li:hover { color: var(--gold-light); }
 
 
 
-.contact-box a:hover {
+.contact-box:hover {
   background: var(--gold);
   color: var(--brown-dark);
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 6px 18px rgba(232, 168, 56, 0.35);
   cursor: pointer;
 }
 
-.contact-box a{
+.contact-box{
     width: 280px;
     height: 55px;
     border: 2px solid #d88b43;
     border-radius: 8px;
-    text-decoration: none;
+
     display: flex;
     align-items: center;
 
@@ -694,8 +694,7 @@ textarea:focus {
 }
 .submit-btn {
   display: block;
-  width: 100%;
-  margin: 0 auto;
+  width: 260px;
   padding: 18px;
   background: linear-gradient(90deg, var(--brown-mid), var(--brown-light), var(--brown-mid));
   color: var(--cream);
