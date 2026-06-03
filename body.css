@@ -1,4 +1,5 @@
- /* =============================================
+ 
+/* =============================================
    BAKES AND BITES — style.css
    Shared styles for index.html + order.html
    ============================================= */
@@ -392,7 +393,7 @@ ul li:hover { color: var(--gold-light); }
   cursor: pointer;
 }
 
-.contact-box a{
+.contact-box{
     width: 280px;
     height: 55px;
     border: 2px solid #d88b43;
