@@ -384,8 +384,11 @@ ul li:hover { color: var(--gold-light); }
 
 
 
-.contact-box:hover {
-  
+.contact-box a:hover {
+  background: var(--gold);
+  color: var(--brown-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
   cursor: pointer;
 }
 
