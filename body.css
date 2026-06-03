@@ -1,5 +1,4 @@
- 
-/* =============================================
+ /* =============================================
    BAKES AND BITES — style.css
    Shared styles for index.html + order.html
    ============================================= */
@@ -695,7 +694,7 @@ textarea:focus {
 }
 .submit-btn {
   display: block;
-  width: 260px;
+  width: 100%;
   padding: 18px;
   background: linear-gradient(90deg, var(--brown-mid), var(--brown-light), var(--brown-mid));
   color: var(--cream);
